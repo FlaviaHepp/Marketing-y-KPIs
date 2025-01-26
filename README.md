@@ -1,6 +1,117 @@
 # Marketing-y-KPIs
 Análisis y visualización de una base de datos de Marketing. Hecho con SQL y Python.
 
+Analizar el gasto de marketing.
+
+1- ROMI general
+2- ROMI por campañas
+3- Rendimiento de la campaña según la fecha: ¿en qué fecha gastamos más dinero en publicidad, cuándo obtuvimos los mayores ingresos, cuándo las 
+tasas de conversión fueron altas y bajas? ¿Cuáles fueron los valores de pedido promedio?
+4- ¿Cuándo los compradores son más activos? ¿Cuál es el ingreso promedio los días de semana y los fines de semana?
+5- ¿Qué tipos de campañas funcionan mejor: redes sociales, banners, influencers o una búsqueda?
+6- ¿Qué ubicaciones geográficas son mejores para la segmentación: ciudades de nivel 1 o nivel 2?
+
+Columna. Descripción
+Fecha Fecha de gasto del presupuesto de marketing
+Nombre de la campaña Descripción de la campaña
+Categoría Tipo de fuente de marketing
+Id. de campaña Identificador único
+Impresiones Número de veces que se ha mostrado el anuncio
+Marca. Presupuesto Dinero gastado en esta campaña en este día
+Clics Cuántas personas hicieron clic en un banner (=sitio web visitado)
+Clientes potenciales Cuántas personas se registraron y dejaron sus credenciales
+Pedidos Cuántas personas pagaron por el producto
+Ingresos Cuánto dinero ganamos
+
+Los clics, los clientes potenciales, los pedidos y los ingresos se calculan para una campaña de marketing específica en una fecha específica. 
+Por ejemplo, para la campaña de marketing "facebook_tier1" del 1 de febrero, gastamos 7307,37 INR y obtuvimos 148 263 impresiones que se 
+convirtieron en 1210 clics que, a su vez, se convirtieron en 13 clientes potenciales y 1 pedido. Ganamos 4981 INR.
+
+Estos datos reflejan algunos hechos sobre lo que sucedió: cuánto gastamos, cuánto ganamos, cómo se comportaron los clientes (quién hizo clic en 
+el banner publicitario, quién se registró, quién pagó). Ahora necesitamos calcular métricas de marketing que nos ayuden a evaluar si hicimos un 
+buen trabajo o no y también identificar algunos parámetros de la campaña que serían importantes para el análisis.
+¿Cuáles son estas métricas?
+
+Retorno de la inversión en marketing (ROMI)
+Coste por clic (CPC)
+Coste por cliente potencial (CPL)
+Coste de adquisición de clientes (CAC)
+Valor promedio del pedido (AOV)
+Tasa de conversión 1
+Tasa de conversión 2
+Estas métricas son procesables y nos permiten no sólo analizar sino tomar decisiones y actuar para mejorar el resultado del negocio.
+
+Vamos a profundizar más.
+
+Retorno de la inversión en marketing (ROMI), qué tan efectiva es una campaña de marketing, una métrica que muestra la efectividad de cada rupia 
+gastada.
+Se calcula (Ganancias totales (ingresos) - Costo de marketing) / Costo de marketing)
+
+Tasa de clics (CTR). Porcentaje de personas que hicieron clic en un banner (clics/impresiones)
+
+Conversión 1 conversión de visitantes a clientes potenciales para esta campaña (clientes potenciales/clic)
+
+Conversión 2 Tasa de conversión de clientes potenciales a ventas (pedidos/clientes potenciales)
+
+Valor promedio del pedido (AOV) Valor promedio del pedido para esta campaña (Ingresos/Número de pedidos)
+
+Coste por clic (CPC) cuanto nos cuesta atraer 1 clic (de media)
+(Gasto en Marketing/Clics)
+
+Coste por lead (CPL) ¿cuánto nos cuesta atraer 1 lead (de media)?
+(Gasto en Marketing/Leads)
+
+Costo de adquisición de clientes (CAC): ¿cuánto nos cuesta atraer 1 pedido (en promedio)
+(gasto de marketing/pedidos)?
+Ganancia bruta Ganancia o pérdida después de deducir el costo de marketing (Ingresos-Gasto de marketing)
+
+ROMI es la métrica más importante y se utiliza como la forma definitiva de evaluar si la campaña es buena o mala.
+
+Puede utilizar este artículo para obtener más información sobre las métricas de marketing.
+https://www.owox.com/blog/articles/digital-marketing-metrics-and-kpis/
+
+#Conclusiones:
+
+#Alto ROI en YouTube: la campaña YouTube blogger se destaca con el mayor retorno de la inversión (ROI), lo que sugiere que las asociaciones con 
+# influencers impulsadas por contenido en YouTube son altamente efectivas para generar valor a partir del gasto en marketing.
+#Desafíos con Facebook LAL: la campaña Facebook Lookalike Audience (LAL) se identifica repetidamente como la de menor rendimiento tanto en ROI 
+# como en otras métricas, lo que indica que, si bien dirigirse a audiencias similares puede ser poderoso, esta ejecución en particular puede 
+# necesitar una revisión u optimización. #Retargeting efectivo en Facebook: el éxito de la campaña de retargeting en Facebook en términos de 
+# tasa de clics (CTR) subraya la eficacia de las estrategias de retargeting en esta plataforma, probablemente debido a la segmentación precisa 
+# de la audiencia en función de la interacción previa.
+#Relación costo-eficiencia con Instagram Tier 2: la campaña Tier 2 de Instagram muestra el costo por adquisición (CPA) más bajo para los 
+# clientes potenciales, lo que sugiere que las estrategias de segmentación o creativas en este nivel son rentables y efectivas para generar 
+# interés y acciones a un menor costo.
+#Dinámica interesante de la tasa de conversión: las altas tasas de conversión para las campañas Tier 2 de Facebook y YouTube Blogger, junto con 
+# Instagram Blogger y Banner Partner, revelan una visión matizada del rendimiento de la campaña. Este último, a pesar de un CTR bajo, aún 
+# logra altas tasas de conversión, lo que sugiere que, si bien es posible que menos usuarios hagan clic, los que lo hacen están muy interesados 
+# ​​o tienen la intención de tomar una acción. Esto apunta a la calidad de la interacción por sobre la mera cantidad. #Rendimiento deficiente 
+# persistente de Facebook LAL: en varias métricas, Facebook LAL muestra constantemente un rendimiento deficiente. Este hallazgo repetido indica 
+# un área crítica para la reevaluación y el ajuste en la segmentación, la estrategia creativa o la ejecución general de la campaña.
+#Próximos pasos con el análisis de series temporales: avanzar con un análisis de series temporales proporcionará información más detallada 
+# sobre cómo estas tendencias y rendimientos evolucionan con el tiempo, especialmente dentro del contexto específico de los cambios diarios y 
+# semanales de febrero. Esto podría revelar información más granular sobre la efectividad de la campaña, los comportamientos de la audiencia y 
+# las posibles influencias externas en los resultados de marketing.
+
+#Conclusión final: en resumen, hubo una interacción bastante compleja entre todas las diferentes métricas. No se puede simplemente observar un 
+# punto de datos para comprender qué impulsó realmente el rendimiento. El panorama completo requiere profundizar en conjuntos de datos más 
+# grandes y profundos.
+
+***Calculando Métricas***
+-Pregunta 1.1: ¿Cuál es el CTR de la campaña google_wide del 1 de febrero de 2021?
+-Pregunta 1.2: ¿Cuál es la Conversión 1 de la campaña instagram_tier2 del 5 de febrero de 2021?
+-Pregunta 1.3: ¿Cuál es la Conversión 2 de la campaña facebook_tier1 del 9 de febrero de 2021?
+-Pregunta 1.4: ¿Cuál es el AOV de la campaña facebook_lal del 13 de febrero de 2021?
+-Pregunta 1.5: ¿Cuál es el CPC de la campaña facebook_retargeting del 23 de febrero de 2021?
+-Pregunta 1.6: ¿Cuál es el CAC de la campaña youtube_blogger del 24 de febrero de 2021?
+-Pregunta 1.7: ¿Cuál es el ROMI de la campaña banner_partner del 28 de febrero de 2021?
+***Calcular el ROMI general***
+***Calcular el ROMI para la campaña instagram_blogger entre el 15 y el 25 de febrero***
+***Averiguar el ingreso promedio gastado el fin de semana (sábado y domingo)***
+***Averiguar el ingreso promedio gastado en días laborables (de lunes a viernes) con NOT IN***
+***¿Qué campaña mostró la mayor pérdida en un solo día? Por pérdida nos referimos a una ganancia bruta negativa (ingresos - gastos de # marketing). Ingrese el ID de la campaña.***
+***¿Cuánto dinero total gastamos en Facebook en campañas con ROMI negativo?***
+
 El archivo realiza un análisis exhaustivo de métricas de marketing y desempeño de campañas publicitarias. A continuación, se detalla qué se hizo y las conclusiones principales:
 **1. Objetivo del análisis**
 Evaluar el desempeño de diversas campañas de marketing utilizando métricas clave como ROI, CTR, costo por clic (CPC), y costo por adquisición (CAC).
