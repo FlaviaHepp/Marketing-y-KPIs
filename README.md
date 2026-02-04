@@ -111,7 +111,7 @@ Se calcularon y analizaron los siguientes indicadores clave:
 
 - **Python**
 - **pandas**
-- **matplotlib, seaborn**
+- **matplotlib, `seaborn**`
 - **SQL (lógica analítica)**
 - **Jupyter / scripts en Python**
 
